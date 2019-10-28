@@ -14,7 +14,11 @@ namespace Vidly.Controllers
         {
             var movie = new Movie() { name = "Matrix" };
 
-            return View(movie);
+            //return View(movie);
+            //return Content("Hello Kitty");
+            //return HttpNotFound();
+            //return new EmptyResult();
+            return RedirectToAction("index", "home", new { page = 1, sortBy = "name"});
         }
     }
 }
