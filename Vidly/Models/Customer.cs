@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -15,6 +16,8 @@ namespace Vidly.Models {
         /// <summary>
         /// Represents the fullname of a customer
         /// </summary>
+        [Required]
+        [StringLength(255)]
         public string name { get; set; }
         /// <summary>
         /// Represents if the customers allow us to send him news letter of our product
