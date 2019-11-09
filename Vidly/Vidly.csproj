@@ -185,15 +185,20 @@
     <Compile Include="Migrations\201911081724472_InitiaModel.Designer.cs">
       <DependentUpon>201911081724472_InitiaModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911091443128_InitialModels.cs" />
-    <Compile Include="Migrations\201911091443128_InitialModels.Designer.cs">
-      <DependentUpon>201911091443128_InitialModels.cs</DependentUpon>
+    <Compile Include="Migrations\201911091508561_addIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201911091508561_addIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201911091508561_addIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911091530000_addMembershipType.cs" />
+    <Compile Include="Migrations\201911091530000_addMembershipType.Designer.cs">
+      <DependentUpon>201911091530000_addMembershipType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -283,8 +288,11 @@
     <EmbeddedResource Include="Migrations\201911081724472_InitiaModel.resx">
       <DependentUpon>201911081724472_InitiaModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911091443128_InitialModels.resx">
-      <DependentUpon>201911091443128_InitialModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911091508561_addIsSubscribedToCustomer.resx">
+      <DependentUpon>201911091508561_addIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911091530000_addMembershipType.resx">
+      <DependentUpon>201911091530000_addMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
