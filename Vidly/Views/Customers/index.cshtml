@@ -6,6 +6,8 @@
 }
 
 <h2>Customers</h2>
+@if (Model.Any())
+{
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -21,4 +23,8 @@
         }
     </tbody>
 </table>
-
+}
+else
+{
+    <p>We don't have any Customers yet</p>
+}

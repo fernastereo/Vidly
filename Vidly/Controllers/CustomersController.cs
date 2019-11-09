@@ -10,11 +10,11 @@ namespace Vidly.Controllers
     public class CustomersController : Controller
     {
         private List<Customer> customers = new List<Customer> {
-                new Customer() { id = 1, name = "Tony Stark" },
-                new Customer() { id = 2, name = "Steve Rogers" },
-                new Customer() { id = 3, name = "Natasha Romanov" },
-                new Customer() { id = 4, name = "Wanda Maximoff" },
-                new Customer() { id = 5, name = "Nick Fury" },
+                //new Customer() { id = 1, name = "Tony Stark" },
+                //new Customer() { id = 2, name = "Steve Rogers" },
+                //new Customer() { id = 3, name = "Natasha Romanov" },
+                //new Customer() { id = 4, name = "Wanda Maximoff" },
+                //new Customer() { id = 5, name = "Nick Fury" },
                 };
 
         // GET: Customers
@@ -37,6 +37,11 @@ namespace Vidly.Controllers
             var customer = from element in customers
                            where element.id == id
                            select element;
+
+            if (!customer.Any())
+            {
+                return HttpNotFound();
+            }
 
             return View(customer.SingleOrDefault());
         }
