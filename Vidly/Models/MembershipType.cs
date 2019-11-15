@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -15,6 +16,12 @@ namespace Vidly.Models
         /// Represents the internal unique identification for any customer
         /// </summary>
         public byte id { get; set; }
+        /// <summary>
+        /// Represents the name of the membership type
+        /// </summary>
+        [Required]
+        [StringLength(50)]
+        public string name { get; set; }
         /// <summary>
         /// Represents the cost a customer must pay for his membership
         /// </summary>
