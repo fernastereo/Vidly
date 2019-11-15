@@ -31,7 +31,10 @@ namespace Vidly.Models {
         /// Represents the foreign key to membershiptype model
         /// </summary>
         public byte membershipTypeId { get; set; }
-
-
+        /// <summary>
+        /// Represents the birth date for a customer
+        /// ? is used to set as nullable field
+        /// </summary>
+        public DateTime? birthDate { get; set; } 
     }
 }

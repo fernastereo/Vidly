@@ -36,7 +36,7 @@ namespace Vidly.Controllers
             //               where element.id == id
             //               select element;
 
-            var customer = _context.Customers.SingleOrDefault(c => c.id == id);
+            var customer = _context.Customers.Include(c => c.membershipType).SingleOrDefault(c => c.id == id);
 
             //if (!customer.Any())
             //{

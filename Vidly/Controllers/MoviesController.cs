@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +14,18 @@ namespace Vidly.Controllers
     /// </summary>
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Movies
         /// <summary>
         /// 
@@ -62,13 +75,20 @@ namespace Vidly.Controllers
                 sortBy = "Name";
             }
 
-            var movies = new List<Movie>{
-                new Movie { id = 1, name = "Matrix" },
-                new Movie { id = 2, name = "Endgame" },
-            };
+            //var movies = new List<Movie>{
+            //    new Movie { id = 1, name = "Matrix" },
+            //    new Movie { id = 2, name = "Endgame" },
+            //};
 
             //return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+            var movies = _context.Movies.Include(c => c.genre).ToList();
             return View(movies);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.Include(c => c.genre).SingleOrDefault(c => c.id == id);
+            return View(movie);
         }
 
         //Creating a custom route: method 2: (Attrubute routing)
