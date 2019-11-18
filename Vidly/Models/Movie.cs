@@ -24,6 +24,7 @@ namespace Vidly.Models {
         /// <summary>
         /// Represents the foreign key to Genre model
         /// </summary>
+        [Required]
         public int genreId { get; set; }
 
         /// <summary>
