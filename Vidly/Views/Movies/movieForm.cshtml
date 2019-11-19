@@ -8,22 +8,33 @@
 <h2>@Model.viewTitle</h2>
 @using (Html.BeginForm("create", "movies"))
 {
+    @Html.ValidationSummary(true, "Please fix the following errors:")
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.name, "Name")
         @Html.TextBoxFor(m => m.Movie.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.releaseDate, "Release Date")
         @Html.TextBoxFor(m => m.Movie.releaseDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.releaseDate)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.genreId, "Genre")
         @Html.DropDownListFor(m => m.Movie.genreId, new SelectList(Model.Genres, "id", "name"), "-- Select --", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.genreId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.stock, "Number in Stock")
         @Html.TextBoxFor(m => m.Movie.stock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.stock)
     </div>
     @Html.HiddenFor(m => m.Movie.id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

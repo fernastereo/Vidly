@@ -43,6 +43,7 @@ namespace Vidly.Models {
         /// Represents the number of copies of any movie in stock
         /// </summary>
         [Required]
+        [Range(1, 20)]
         public int stock { get; set; }
     }
 }
