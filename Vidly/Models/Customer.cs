@@ -16,7 +16,7 @@ namespace Vidly.Models {
         /// <summary>
         /// Represents the fullname of a customer
         /// </summary>
-        [Required]
+        [Required(ErrorMessage = "Please enter customer's name")]
         [StringLength(255)]
         [Display(Name = "Name")]
         public string name { get; set; }
@@ -38,6 +38,7 @@ namespace Vidly.Models {
         /// Represents the birth date for a customer
         /// ? is used to set as nullable field
         /// </summary>
+        [Min18YearsIfAMember]
         public DateTime? birthDate { get; set; } 
     }
 }
