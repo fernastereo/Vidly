@@ -90,7 +90,7 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.membershipType).ToList();
-            //include is for eager loading. When you try to retrieve data and a relationship whiit another model
+            //include is for eager loading. When you try to retrieve data and a relationship with another model
             return View(customers);
         }
 
