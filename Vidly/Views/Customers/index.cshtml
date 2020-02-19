@@ -9,8 +9,6 @@
 <p>
     @Html.ActionLink("New Customer", "New", new { controller = "Customers" }, new { @class = "btn btn-primary" })
 </p>
-@if (Model.Any())
-{
 <table id="customers" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -20,28 +18,35 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var customer in Model)
-        {
-            <tr>
-                <td>@Html.ActionLink(customer.name, "Edit", "Customers", new { id = customer.id }, null)</td>
-                <td>@customer.membershipType.name</td>
-                <td>
-                    <button data-customer-id="@customer.id" class="btn-link js-delete">Delete</button>
-                </td>
-            </tr>
-        }
     </tbody>
 </table>
-}
-else
-{
-    <p>We don't have any Customers yet</p>
-}
 
 @section scripts{
     <script>
         $(document).ready(function () {
-            $("#customers").DataTable();
+            $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, customer) {
+                            return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
+                        }
+                    },
+                    {
+                        data: "membershipType.name"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button data-customer-id=" + data + " class='btn-link js-delete'>Delete</button>";
+                        }
+                    }
+                ]
+            });
 
             //Get the customers table and find all elements with the class js-delete
             $("#customers").on("click", ".js-delete", function () {
