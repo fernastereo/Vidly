@@ -93,8 +93,8 @@ namespace Vidly.Controllers
 
         public ActionResult Index() {
             //? [int? pageIndex] sirve para indicar que el parametro es opcional
-            var movies = _context.Movies.Include(c => c.genre).ToList();
-            return View(movies);
+            //var movies = _context.Movies.Include(c => c.genre).ToList();
+            return View();
         }
 
         public ActionResult Details(int id)
