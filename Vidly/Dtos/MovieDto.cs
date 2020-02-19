@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Vidly.Models;
 
 namespace Vidly.Dtos
 {
@@ -14,6 +15,9 @@ namespace Vidly.Dtos
         public string name { get; set; }
         [Required]
         public int genreId { get; set; }
+
+        public Genre genre { get; set; }
+
         [Required]
         public DateTime releaseDate { get; set; }
         [Required]
