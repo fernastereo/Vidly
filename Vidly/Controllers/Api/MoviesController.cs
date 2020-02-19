@@ -78,7 +78,7 @@ namespace Vidly.Controllers.Api
 
             _context.SaveChanges();
 
-            return Ok();
+            return Ok(movieDto);
         }
 
         [HttpDelete]
