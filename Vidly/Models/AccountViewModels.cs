@@ -6,7 +6,7 @@ namespace Vidly.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Correo electrónico")]
+        [Display(Name = "Correo Electrónico")]
         public string Email { get; set; }
     }
 
