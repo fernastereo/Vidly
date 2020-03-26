@@ -5,19 +5,21 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Vidly.Controllers {
+
+    [AllowAnonymous]
     public class HomeController : Controller {
         public ActionResult Index() {
             return View();
         }
 
         public ActionResult About() {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Description for your application";
 
             return View();
         }
 
         public ActionResult Contact() {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Page";
 
             return View();
         }

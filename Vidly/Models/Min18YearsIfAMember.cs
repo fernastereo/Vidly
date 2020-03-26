@@ -13,7 +13,8 @@ namespace Vidly.Models
             var customer = (Customer)validationContext.ObjectInstance;
 
             if (customer.membershipTypeId == MembershipType.Unknown || 
-                customer.membershipTypeId == MembershipType.PayAsYouGo) //estas dos variables se definieron como constantes publicas en el modelo MembershipType
+                customer.membershipTypeId == MembershipType.PayAsYouGo) 
+                //estas dos variables se definieron como constantes publicas en el modelo MembershipType
             {
                 return ValidationResult.Success;
             }
