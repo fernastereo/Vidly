@@ -6,4 +6,17 @@
 }
 
 <h2>movielist</h2>
-
+<p>
+    @Html.ActionLink("New Movie", "New", new { controller = "Movies" }, new { @class = "btn btn-primary" })
+</p>
+<table id="movies" class="table table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Genre</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
