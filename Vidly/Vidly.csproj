@@ -506,6 +506,7 @@
     <Content Include="Views\Customers\customerForm.cshtml" />
     <Content Include="Views\Movies\movieForm.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Movies\movielist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
