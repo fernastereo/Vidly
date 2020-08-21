@@ -6,7 +6,9 @@ using System.Web;
 
 namespace Vidly.Models {
     public class Movie {
-
+        /// <summary>
+        /// Represents the internal unique identification for any movie
+        /// </summary>
         public int id { get; set; }
 
         /// <summary>

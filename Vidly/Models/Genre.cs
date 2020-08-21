@@ -8,6 +8,9 @@ namespace Vidly.Models
 {
     public class Genre
     {
+        /// <summary>
+        /// Represents the internal unique identification for any Genre
+        /// </summary>
         public int id { get; set; }
 
         /// <summary>
