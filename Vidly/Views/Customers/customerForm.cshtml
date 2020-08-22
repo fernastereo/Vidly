@@ -31,7 +31,7 @@
         </label>
     </div>
     @Html.HiddenFor(m => m.Customer.id)
-    @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken() //this is the same that @csrf in laravel
     <button type="submit" class="btn btn-primary">Save Changes</button>
 }
 
