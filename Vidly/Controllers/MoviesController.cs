@@ -27,7 +27,7 @@ namespace Vidly.Controllers
         }
 
         // GET: Movies
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New() {
             var genres = _context.Genres.ToList();
 
@@ -95,7 +95,11 @@ namespace Vidly.Controllers
         public ActionResult Index() {
             //? [int? pageIndex] sirve para indicar que el parametro es opcional
             //var movies = _context.Movies.Include(c => c.genre).ToList();
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))
+            {
+                return View("list");
+            }
+            return View("readOnlyList");
         }
 
         public ActionResult Details(int id)
