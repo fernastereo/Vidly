@@ -249,6 +249,10 @@
     <Compile Include="Migrations\201911182257379_setGenreIdRequiredInMovies.Designer.cs">
       <DependentUpon>201911182257379_setGenreIdRequiredInMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008221437599_SeedUsers.cs" />
+    <Compile Include="Migrations\202008221437599_SeedUsers.Designer.cs">
+      <DependentUpon>202008221437599_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -559,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911182257379_setGenreIdRequiredInMovies.resx">
       <DependentUpon>201911182257379_setGenreIdRequiredInMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008221437599_SeedUsers.resx">
+      <DependentUpon>202008221437599_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
