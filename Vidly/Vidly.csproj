@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44370</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -256,6 +256,10 @@
     <Compile Include="Migrations\202008221507278_AddDrivingLicenceToApplicationUser.cs" />
     <Compile Include="Migrations\202008221507278_AddDrivingLicenceToApplicationUser.Designer.cs">
       <DependentUpon>202008221507278_AddDrivingLicenceToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008222128115_FixDrivingLicenseToApplicationUser.cs" />
+    <Compile Include="Migrations\202008222128115_FixDrivingLicenseToApplicationUser.Designer.cs">
+      <DependentUpon>202008222128115_FixDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -576,6 +580,9 @@
     <EmbeddedResource Include="Migrations\202008221507278_AddDrivingLicenceToApplicationUser.resx">
       <DependentUpon>202008221507278_AddDrivingLicenceToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008222128115_FixDrivingLicenseToApplicationUser.resx">
+      <DependentUpon>202008222128115_FixDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -595,7 +602,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60021</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60021/</IISUrl>
+          <IISUrl>https://localhost:44370/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
