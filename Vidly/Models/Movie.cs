@@ -47,5 +47,7 @@ namespace Vidly.Models {
         [Required]
         [Range(1, 20)]
         public int stock { get; set; }
+
+        public byte numberAvailable { get; set; }
     }
 }
